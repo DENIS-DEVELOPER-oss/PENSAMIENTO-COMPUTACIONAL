@@ -1,13 +1,25 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
-
 int main() {
-    int N, impar = 1;
-    cout << "Ingrese N: ";
-    cin >> N;
-    for(int i = 1; i <= N; i++) {
-        cout << impar << " ";
-        impar += 2;
-    }
+    srand(time(0));
+    int eleccion;
+    cout<<"SELECCIONE:"<<endl<<"(1) piedra"<<endl<<"(2) papel"<<endl<<"(3) tijera"<<endl;
+    cin>>eleccion;
+    
+    int computadora;
+    computadora = rand() % 3 + 1;
+    cout<<"la eleccion de la computadora fue: "<<computadora<<endl;
+    
+    if(eleccion==computadora) {
+        cout<<"empate!"<<endl;}
+        else if ((eleccion==1 && computadora==3) || (eleccion==2 && computadora==1) || (eleccion==3 && computadora==2)) {
+            cout<<"ganaste!"<<endl;
+        }
+        else {
+        cout<<"la computadora gana";}
+    
     return 0;
+    
 }
